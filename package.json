@@ -1,4 +1,13 @@
 {
+  "name": "content-mern-app",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MERN authentication system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
@@ -6,5 +15,9 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.7.0",
+    "nodemon": "^3.1.4"
   }
 }
