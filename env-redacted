@@ -1,0 +1,5 @@
+NODE_ENV=development
+PORT=REDACTED
+MONGO_URI=mongodb+REDACTED.mongodb.net/mernauth?retryWrites=true&w=majority&appName=REDACTED
+MONGO_URl=mongodb+srv://REDACTED@REDACTED.mongodb.net/
+JWT_SECRET=REDACTED
