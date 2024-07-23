@@ -66,7 +66,7 @@ const logoutUser = AsyncHandler(async (req, res) => {
     expires: new Date(0),
   });
 
-  res.status(200).json({ message: "User Logout User" });
+  res.status(200).json({ message: "User Logged Out" });
 });
 
 // @desc    Get user profile
