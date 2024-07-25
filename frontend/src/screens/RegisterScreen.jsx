@@ -63,7 +63,7 @@ const RegisterScreen = () => {
       </Form>
       <Row className="py-3">
         <Col>
-          new Customer? <Link to="/register">Register</Link>
+          Already Have An Account? <Link to="/login">Register</Link>
         </Col>
       </Row>
     </FormContainer>
