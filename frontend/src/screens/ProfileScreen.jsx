@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import FormContainer from "../components/FormContainer";
@@ -9,8 +9,10 @@ import { setCredentials } from "../slices/authSlice";
 import { useUpdateUserMutation } from "../slices/usersApiSlice";
 
 const ProfileScreen = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const { userInfo } = useSelector((state) => state.auth);
+
+  const [name, setName] = useState(userInfo.name);
+  const [email, setEmail] = useState(userInfo.email);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -18,13 +20,6 @@ const ProfileScreen = () => {
   const navigate = useNavigate();
 
   const [updateProfile, { isLoading }] = useUpdateUserMutation();
-
-  const { userInfo } = useSelector((state) => state.auth);
-
-  useEffect(() => {
-    setName(userInfo.name);
-    setEmail(userInfo.email);
-  }, [userInfo.name, userInfo.email]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
