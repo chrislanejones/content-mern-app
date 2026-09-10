@@ -23,4 +23,8 @@ app.get("/", (req, res) => res.send("server is ready"));
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+if (!process.env.VERCEL) {
+  app.listen(port, () => console.log(`Server started on port ${port}`));
+}
+
+export default app;
